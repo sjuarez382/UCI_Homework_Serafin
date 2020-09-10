@@ -1,2 +1,2 @@
-## this is my homework
+## This is my homework
 testing
