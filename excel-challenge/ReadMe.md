@@ -1,8 +1,8 @@
 ### Excel Challenge Homework
-#Please see attached
+##Please see attached
 
 
-**This text will be bold** Excel file will contain sheets in the reverse order of what was assigned out (Bonus to the initial data from Left to Right).
+**Excel file will contain sheets in the reverse order of what was assigned out (Bonus to the initial data from Left to Right)**
 
 * Item 1
 * Item 2
