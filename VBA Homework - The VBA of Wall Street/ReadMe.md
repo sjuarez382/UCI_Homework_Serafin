@@ -18,15 +18,15 @@ In addition to this, there is also the Challenge portion of the assignment.
   * Greatest Total Volume 
 
 
-**2014
+* 2014
 
 ![screenshot](https://github.com/sjuarez382/UCI_Homework_Serafin/blob/master/Images/2014_VBA_Wallstreet.PNG)
 
-**2015
+* 2015
 
 ![screenshot](https://github.com/sjuarez382/UCI_Homework_Serafin/blob/master/Images/2015_VBA_Wallstreet.PNG)
 
-**2016
+* 2016
 
 ![screenshot](https://github.com/sjuarez382/UCI_Homework_Serafin/blob/master/Images/2016_VBA_Wallstreet.PNG)
 
