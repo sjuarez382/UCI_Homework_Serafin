@@ -9,6 +9,7 @@ For Each ws in Worksheets
 
 	'Assigning all variables for calculations
 		Dim i As Long
+		Dim j As Long
 		Dim tickerValue As String
 		Dim totalOpen As Double
 		Dim totalVolume As Double
@@ -25,7 +26,7 @@ for i = 2 to lastRow
 		totalOpen = ws.cells(tickerRow, 3).Value
 	
 	'Conditionals for Ticker
-	if ws.cells(i + 1, 1).Value <> ws.cells(i , 1).Value then
+	if ws.cells(i + 1, 1).Value <> ws.cells(i , 1).Value then 
 		tickerValue = ws.cells(i , 1).Value
 		ws.range("I" & tickerRow).Value = tickerValue
 	
@@ -44,6 +45,9 @@ for i = 2 to lastRow
 		ws.range("L" & tickerRow).Value = totalVolume
 
 		tickerRow = tickerRow + 1
+		totalOpen = ws.cells(tickerRow, 3).Value
+		yearlyChange = 0
+		totalVolume = 0
 	else
 		totalVolume = totalVolume + ws.cells(i, 7).Value
 	End If 
