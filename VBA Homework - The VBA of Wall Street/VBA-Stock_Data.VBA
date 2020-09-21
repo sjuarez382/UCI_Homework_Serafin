@@ -9,7 +9,6 @@ For Each ws in Worksheets
 
 	'Assigning all variables for calculations
 		Dim i As Long
-		Dim j As Long
 		Dim tickerValue As String
 		Dim totalOpen As Double
 		Dim totalVolume As Double
@@ -21,6 +20,7 @@ For Each ws in Worksheets
 		tickerRow = 2
 		Dim lastRow As Long
 		lastRow = ws.Cells(Rows.Count, 1).End(xlUp).Row
+		
 
 for i = 2 to lastRow
 		totalOpen = ws.cells(tickerRow, 3).Value
@@ -31,7 +31,7 @@ for i = 2 to lastRow
 		ws.range("I" & tickerRow).Value = tickerValue
 	
 	'Conditionals for Yearly Change
-		yearlyChange = yearlyChange + (ws.cells(i, 6).Value - totalOpen)
+		yearlyChange = close - totalOpen
 		ws.range("J" & tickerRow).Value = yearlyChange
 
 
