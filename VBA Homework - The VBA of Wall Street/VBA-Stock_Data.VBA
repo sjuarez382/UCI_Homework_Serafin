@@ -25,19 +25,16 @@ For Each ws In Worksheets
 
 For i = 2 To lastRow
         totalOpen = ws.Cells(tickerRow, 3).Value
-        TotalClose = ws.Range("F" & i).Value
+        
+    
     'Conditionals for Ticker
     If ws.Cells(i + 1, 1).Value <> ws.Cells(i, 1).Value Then
     
-    totalVolume = totalVolume + ws.Cells(i, 7).Value
-        
-          
-       
-    Else
          tickerValue = ws.Cells(i, 1).Value
         ws.Range("I" & tickerRow).Value = tickerValue
     
     'Conditionals for Yearly Change
+        TotalClose = ws.cells(i, Column + 5).Value 
         yearlyChange = TotalClose - totalOpen
         ws.Range("J" & tickerRow).Value = yearlyChange
 
@@ -56,6 +53,12 @@ For i = 2 To lastRow
         yearlyChange = 0
         totalVolume = 0
         
+          
+       
+    Else
+    
+    totalVolume = totalVolume + ws.Cells(i, 7).Value
+
     End If
         
 Next i
