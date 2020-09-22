@@ -19,9 +19,9 @@ For Each ws in Worksheets
 		Dim tickerRow As Long
 		tickerRow = 2
 		Dim lastRow As Long
-		lastRow = ws.Cells(Rows.Count, 1).End(xlUp).Row
-		Dim YearChangerestart As Long
-		YearChangerestart = 2 
+		lastRow = ws.Cells(Rows.Count, 1).End(xlUp).Row 
+		Dim ClosePrice As Double
+		ClosePrice = 0
 		'create new variable for restart of yearly change ticker row( should be = i + 1)'
 
 
@@ -33,12 +33,15 @@ for i = 2 to lastRow
 	'Conditionals for Ticker
 	if ws.cells(i + 1, 1).Value <> ws.cells(i , 1).Value then
 		tickerValue = ws.cells(i , 1).Value
+		
+
+		ClosePrice = ws.cells(i, 6).Value
 		ws.range("I" & tickerRow).Value = tickerValue
 	
 	'Conditionals for Yearly Change
-		yearlyChange =  (ws.cells(i, 6).Value - totalOpen)
+		yearlyChange =  (ClosePrice - totalOpen)
 		ws.range("J" & tickerRow).Value = yearlyChange
-		YearChangerestart = (i + 1)
+
 
 	'Conditionals for Percent Change
 		percentChange = ( yearlyChange/ totalOpen)
