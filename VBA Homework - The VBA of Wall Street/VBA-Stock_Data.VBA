@@ -11,11 +11,13 @@ For Each ws in Worksheets
 		Dim i As Long
 		Dim tickerValue As String
 		Dim totalOpen As Double
+		totalOpen = 0
 		Dim totalVolume As Double
 		totalVolume = 0
 		Dim yearlyChange As Double
 		yearlyChange = 0
 		Dim percentChange As Double
+		percentChange = 0
 		Dim tickerRow As Long
 		tickerRow = 2
 		Dim lastRow As Long
@@ -27,7 +29,7 @@ For Each ws in Worksheets
 
 
 for i = 2 to lastRow
-		totalOpen = ws.cells(tickerRow, 3).Value
+		totalOpen = ws.cells(2, 3).Value
 
 	
 	'Conditionals for Ticker
@@ -35,25 +37,31 @@ for i = 2 to lastRow
 		tickerValue = ws.cells(i , 1).Value
 		
 
-		ClosePrice = ws.cells(i, 6).Value
-		ws.range("I" & tickerRow).Value = tickerValue
+		ClosePrice = ws.cells(i, 6).Value	
 	
 	'Conditionals for Yearly Change
-		yearlyChange =  (ClosePrice - totalOpen)
-		ws.range("J" & tickerRow).Value = yearlyChange
-
+		yearlyChange =  (ClosePrice - totalOpen)	
 
 	'Conditionals for Percent Change
-		percentChange = ( yearlyChange/ totalOpen)
-		ws.range("K" & tickerRow).Value = percentChange
-		ws.range("K" & tickerRow).style = "Percent"
-
+		percentChange = (yearlyChange/ totalOpen)
+		
 	'Conditionals for Total Stock Volume 
 		totalVolume = totalVolume + ws.cells(i, 7).Value
+		
+	
+	'Print values'
+		ws.range("I" & tickerRow).Value = tickerValue
+		ws.range("K" & tickerRow).Value = percentChange
+		ws.range("K" & tickerRow).style = "Percent"
+		ws.range("J" & tickerRow).Value = yearlyChange
 		ws.range("L" & tickerRow).Value = totalVolume
-		totalVolume = 0
 
+		'Reseting loop'
+		totalVolume = 0
 		tickerRow = tickerRow + 1
+		ClosePrice = 0
+		yearlyChange = 0
+		totalOpen = ws.Cells(i + 1, 3).Value 
 
 	else
 		totalVolume = totalVolume + ws.cells(i, 7).Value
