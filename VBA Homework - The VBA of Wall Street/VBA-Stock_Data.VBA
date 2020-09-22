@@ -20,7 +20,7 @@ For Each ws in Worksheets
 		tickerRow = 2
 		Dim lastRow As Long
 		lastRow = ws.Cells(Rows.Count, 1).End(xlUp).Row
-		Dim yearlyChangeLastRow As Long
+		Dim YearChangerestart As Long
 		YearChangerestart = 2 
 		'create new variable for restart of yearly change ticker row( should be = i + 1)'
 
@@ -38,7 +38,7 @@ for i = 2 to lastRow
 	'Conditionals for Yearly Change
 		yearlyChange =  (ws.cells(i, 6).Value - totalOpen)
 		ws.range("J" & tickerRow).Value = yearlyChange
-		yearlyChangeLastRow = (i + 1)
+		YearChangerestart = (i + 1)
 
 	'Conditionals for Percent Change
 		percentChange = ( yearlyChange/ totalOpen)
