@@ -28,7 +28,13 @@ For i = 2 To lastRow
         TotalClose = ws.Range("F" & i).Value
     'Conditionals for Ticker
     If ws.Cells(i + 1, 1).Value <> ws.Cells(i, 1).Value Then
-        tickerValue = ws.Cells(i, 1).Value
+    
+    totalVolume = totalVolume + ws.Cells(i, 7).Value
+        
+          
+       
+    Else
+         tickerValue = ws.Cells(i, 1).Value
         ws.Range("I" & tickerRow).Value = tickerValue
     
     'Conditionals for Yearly Change
@@ -49,8 +55,7 @@ For i = 2 To lastRow
         totalOpen = ws.Cells(tickerRow, 3).Value
         yearlyChange = 0
         totalVolume = 0
-    Else
-        totalVolume = totalVolume + ws.Cells(i, 7).Value
+        
     End If
         
 Next i
