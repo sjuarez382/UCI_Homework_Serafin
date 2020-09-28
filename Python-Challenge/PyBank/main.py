@@ -1,6 +1,20 @@
 import os
 import csv 
 
+# path to collect data 
+pybank_csv = os.path.join('..', 'csv_files', 'budget_data.csv')
+print(pybank_csv) 
+
+#reading the file
+with open(pybank_csv) as csvfile:
+
+    csvreader = csv.reader(csvfile, delimiter=',')
+    print(csvreader)
+
+    csv_header = next(csvreader)
+    print(f"CSV Header: {csv_header}")
+
+# printing
 print("Financial Analysis")
 print("-------------------------------------------------------")
 
