@@ -3,16 +3,22 @@ import csv
 
 # path to collect data 
 pybank_csv = os.path.join('..', 'csv_files', 'budget_data.csv')
-print(pybank_csv) 
 
 #reading the file
-with open(pybank_csv) as csvfile:
+with open(pybank_csv, 'r') as csvfile:
 
     csvreader = csv.reader(csvfile, delimiter=',')
     print(csvreader)
 
     csv_header = next(csvreader)
     print(f"CSV Header: {csv_header}")
+
+    #declaring all my variables
+    total_months = []
+    profit_loss = []
+    average_change = []
+    greatest_increase_dt = "" 
+    greatest_decrease_dt = ""
 
 # printing
 print("Financial Analysis")
