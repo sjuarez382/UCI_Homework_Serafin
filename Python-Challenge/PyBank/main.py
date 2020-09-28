@@ -20,11 +20,17 @@ with open(pybank_csv, 'r') as csvfile:
     greatest_increase_dt = "" 
     greatest_decrease_dt = ""
 
-# printing
-print("Financial Analysis")
-print("-------------------------------------------------------")
+    # printing
+    print("Financial Analysis")
+    print("-------------------------------------------------------")
 
-# Total number of months included in dataset
+    # Total number of months included in dataset
+    for row in csvreader:
+        total_months.append(row[0])
+        profit_loss.append(row[1])
+        profit_loss = [int(i) for i in profit_loss]
+        total_change = 0
+        print(total_months)  
 
 # The net total amount of "Profit/Losses" over the entire period
 
