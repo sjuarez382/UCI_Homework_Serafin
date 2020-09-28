@@ -14,7 +14,7 @@ with open(pybank_csv, 'r') as csvfile:
     print(f"CSV Header: {csv_header}")
 
     #declaring all my variables
-    total_months = []
+    total_months = 0
     profit_loss = []
     average_change = []
     greatest_increase_dt = "" 
@@ -26,13 +26,19 @@ with open(pybank_csv, 'r') as csvfile:
 
     # Total number of months included in dataset
     for row in csvreader:
-        total_months.append(row[0])
+        total_months = total_months + 1
         profit_loss.append(row[1])
         profit_loss = [int(i) for i in profit_loss]
         total_change = 0
-        print(total_months)  
+    print("total_months:" + str(total_months))  
 
 # The net total amount of "Profit/Losses" over the entire period
+    for i in range(len(profit_loss)-1):
+        average_change = profit_loss[i + 1] - profit_loss[1]
+        total_change = total_change + average_change
+
+        avg_chg = (total_change) / (len(profit_loss)-1)
+    print(average_change)
 
 # The average of the changes in "profit/Losses" over the entire period
 
