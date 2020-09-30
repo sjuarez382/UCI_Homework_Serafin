@@ -67,13 +67,13 @@ csvfile = os.path.join('Analysis', "Financial_Analys_Summary_PyPoll.txt")
 with open(csvfile, 'w') as file:
 
 # Writting to text file
-print("Election Results")
-print("----------------------")
-print(f"{candidate_list}")
-print(f'{total_votes}')
-print("----------------------")
+file.write("Election Results")
+file.write("----------------------")
+file.write(f"{candidate_list}")
+file.write(f'{total_votes}')
+file.write("----------------------")
 for i in range(len(candidate_list)):
-    print(f"{candidate_list[i]} : {percent[i]}% ({Vote_list[i]})")
-print("----------------------")
-print(f'{election_winner}')
-print("----------------------")
+    file.write(f"{candidate_list[i]} : {percent[i]}% ({Vote_list[i]})")
+file.write("----------------------")
+file.write(f'{election_winner}')
+file.write("----------------------")
