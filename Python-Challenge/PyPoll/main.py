@@ -17,3 +17,8 @@ with open(pypoll_csv) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     csv_header = next(csvreader)
     print(f"Header:{csv_header}")
+
+#total votes
+    for row in csv.reader(csvfile):
+        total_votes.append(row[0])
+print(f'(len{total_votes})')
