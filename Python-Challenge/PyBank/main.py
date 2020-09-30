@@ -39,8 +39,8 @@ with open(pybank_csv) as csvfile:
             print(f'{sum(net_total)}')    
 
 # The greatest increase in profits (date and amount) over the entire period
-        #greatest_increase_profit = max(monthly_change)
-        #greatest_decrease_profit = min(monthly_change)  
+        greatest_increase_profit = max(monthly_change) + 1
+        greatest_decrease_profit = min(monthly_change) + 1 
 
 # The greatest decrease in losses (date and amount) over hte entire period
         #greatest_increase_dt = date[monthly_change.index(greatest_increase_profit)]
