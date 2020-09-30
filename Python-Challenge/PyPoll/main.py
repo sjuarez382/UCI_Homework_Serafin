@@ -6,6 +6,6 @@ pypoll_csv = os.path.join('..', 'csv_files', 'election_data.csv')
 
 #declaring all my variables
 
-total_months = []
-monthly_change = []
-net_total = []
+total_votes = 0
+candidate_list = []
+Vote_list = []
