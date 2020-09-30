@@ -34,11 +34,19 @@ with open(pypoll_csv) as csvfile:
 
 #declaring other variables
 percent = []
+max_index = 0
+max_vote = Vote_list[0]
 
 #percent calculations!
 for i in range(len(candidate_list)):
-    percent_of_votes = round(total_votes[i] / total_votes*100,2)
+    percent_of_votes = round(Vote_list[i] / total_votes*100,2)
     percent.append(percent_of_votes)
+
+    if Vote_list[i] > max_vote:
+        max_vote = Vote_list[i]
+        print(max_vote)
+        max_index = i
+
 
 
 
