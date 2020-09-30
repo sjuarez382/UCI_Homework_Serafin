@@ -29,9 +29,6 @@ with open(pybank_csv) as csvfile:
 # The net total amount of "Profit/Losses" over the entire period
         net_total.append(int(row[1]))
 
-# printing
-    print("Financial Analysis")
-    print("-------------------------------------------------------")       
 
 # The average of the changes in "profit/Losses" over the entire period
     for i in range(len(net_total)-1):
@@ -51,7 +48,9 @@ greatest_decrease_dt = total_months[monthly_change.index(greatest_decrease_profi
 
 
 
-# print stuff
+# printing
+print("Financial Analysis")
+print("-------------------------------------------------------")       
 print(f'{round(sum(monthly_change)/len(monthly_change),2)}')
 print(f'{total_months[monthly_increase]} (${(str(greatest_increase_profit))}')
 print(f'{total_months[Monthly_decrease]} (${(str(greatest_decrease_profit))}')
