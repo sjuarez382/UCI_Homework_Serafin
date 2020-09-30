@@ -63,9 +63,16 @@ with open(csvfile, 'w') as file:
 
 # Writting to text file
         file.write("Financial Analysis")
+        file.write("\n")
         file.write("-------------------------------------------------------")
+        file.write("\n")
         file.write(f'Total Months: {len(total_months)}')
+        file.write("\n")
         file.write(f'Total: ${sum(net_total)}')
+        file.write("\n")
         file.write(f'Average Change:{round(sum(monthly_change)/len(monthly_change),2)}')
+        file.write("\n")
         file.write(f'Greatest Increase in Profits: {total_months[monthly_increase]} (${(str(greatest_increase_profit))})')
+        file.write("\n")
         file.write(f'Greatest Decrease in Profits: {total_months[Monthly_decrease]} (${(str(greatest_decrease_profit))})')
+        
