@@ -4,6 +4,14 @@ import csv
 # path to collect data 
 pybank_csv = os.path.join('..', 'csv_files', 'budget_data.csv')
 
+#declaring all my variables
+
+monthly_change = []
+total_months = []
+net_total = []
+profit_loss = []
+
+
 #reading the file
 with open(pybank_csv) as csvfile:
 
@@ -12,13 +20,6 @@ with open(pybank_csv) as csvfile:
 #remove header from count
     
     csv_header = next(csvreader)
-
-#declaring all my variables
-
-    monthly_change = []
-    total_months = []
-    net_total = []
-    profit_loss = []
 
 # printing
     print("Financial Analysis")
@@ -39,8 +40,9 @@ with open(pybank_csv) as csvfile:
             print(f'{sum(net_total)}')    
 
 # The greatest increase in profits (date and amount) over the entire period
-        greatest_increase_profit = max(monthly_change) + 1
-        greatest_decrease_profit = min(monthly_change) + 1 
+greatest_increase_profit = max(monthly_change) + 1
+greatest_decrease_profit = min(monthly_change) + 1 
+        
 
 # The greatest decrease in losses (date and amount) over hte entire period
         #greatest_increase_dt = date[monthly_change.index(greatest_increase_profit)]
