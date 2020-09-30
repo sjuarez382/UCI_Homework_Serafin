@@ -33,7 +33,7 @@ with open(pybank_csv, 'r') as csvfile:
        
 
 # The average of the changes in "profit/Losses" over the entire period
-       
+    for i     
 
 # The greatest increase in profits (date and amount) over the entire period
         #greatest_increase_profit = max(monthly_change)
