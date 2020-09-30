@@ -63,9 +63,9 @@ with open(csvfile, 'w') as file:
 
 # Writting to text file
         print("Financial Analysis")
-print("-------------------------------------------------------")
-print(f'Total Months: {len(total_months)}')
-print(f'Total: ${sum(net_total)}')
-print(f'Average Change:{round(sum(monthly_change)/len(monthly_change),2)}')
-print(f'Greatest Increase in Profits: {total_months[monthly_increase]} (${(str(greatest_increase_profit))})')
-print(f'Greatest Decrease in Profits: {total_months[Monthly_decrease]} (${(str(greatest_decrease_profit))})')
+        file.write("-------------------------------------------------------")
+        file.write(f'Total Months: {len(total_months)}')
+        file.write(f'Total: ${sum(net_total)}')
+        file.write(f'Average Change:{round(sum(monthly_change)/len(monthly_change),2)}')
+        file.write(f'Greatest Increase in Profits: {total_months[monthly_increase]} (${(str(greatest_increase_profit))})')
+        file.write(f'Greatest Decrease in Profits: {total_months[Monthly_decrease]} (${(str(greatest_decrease_profit))})')
