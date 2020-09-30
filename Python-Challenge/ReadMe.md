@@ -12,7 +12,7 @@ In this challenge, I was asked to:
 * Provide a set of financial data called "budget_data.csv". 
 
   
-Please see attachements in the folderes titled "PyBank"
+Please see attachements in the folder titled "PyBank"
  
  
 ## PyPoll
@@ -27,4 +27,4 @@ In this challenge, I was asked to:
 * Provide a set of poll data called "election_data.csv"
 
 
-Please see attachements in the folderes titled "PyPoll"
+Please see attachements in the folder titled "PyPoll"
