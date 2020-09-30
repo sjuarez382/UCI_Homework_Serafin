@@ -5,7 +5,7 @@ import csv
 pybank_csv = os.path.join('..', 'csv_files', 'budget_data.csv')
 
 #reading the file
-with open(pybank_csv, 'r') as csvfile:
+with open(pybank_csv) as csvfile:
 
     csvreader = csv.reader(csvfile, delimiter=',')
 
@@ -33,7 +33,10 @@ with open(pybank_csv, 'r') as csvfile:
        
 
 # The average of the changes in "profit/Losses" over the entire period
-    for i     
+    for i in range(len(net_total)-1):
+            profit_loss.append(net_total[i + 1] - net_total[i])
+            print(f'{len(total_months)}')
+            print(f'{sum(net_total)}')    
 
 # The greatest increase in profits (date and amount) over the entire period
         #greatest_increase_profit = max(monthly_change)
