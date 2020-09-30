@@ -22,3 +22,6 @@ with open(pypoll_csv) as csvfile:
     for row in csv.reader(csvfile):
         total_votes += 1
 print(f'{total_votes}')
+
+#list of candidates
+        candidate = (row[2])
