@@ -57,4 +57,15 @@ print(f'Average Change:{round(sum(monthly_change)/len(monthly_change),2)}')
 print(f'Greatest Increase in Profits: {total_months[monthly_increase]} (${(str(greatest_increase_profit))})')
 print(f'Greatest Decrease in Profits: {total_months[Monthly_decrease]} (${(str(greatest_decrease_profit))})')
 
-  
+ #Final script, print to terminal and exporting to text file
+csvfile = os.path.join('Financial Analysis', "Finanacial_Analys_Summary_PyBank.txt")
+with open(csvfile, 'w') as file:
+
+# Writting to text file
+        print("Financial Analysis")
+print("-------------------------------------------------------")
+print(f'Total Months: {len(total_months)}')
+print(f'Total: ${sum(net_total)}')
+print(f'Average Change:{round(sum(monthly_change)/len(monthly_change),2)}')
+print(f'Greatest Increase in Profits: {total_months[monthly_increase]} (${(str(greatest_increase_profit))})')
+print(f'Greatest Decrease in Profits: {total_months[Monthly_decrease]} (${(str(greatest_decrease_profit))})')
