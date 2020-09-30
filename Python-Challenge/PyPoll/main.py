@@ -14,4 +14,5 @@ Vote_list = []
 with open(pypoll_csv) as csvfile:
 
     csvreader = csv.reader(csvfile, delimiter=',')
-    
+    csv_header = next(csvreader)
+    print(f"Header:{csv_header}")
