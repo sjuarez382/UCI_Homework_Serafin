@@ -9,3 +9,9 @@ pypoll_csv = os.path.join('..', 'csv_files', 'election_data.csv')
 total_votes = 0
 candidate_list = []
 Vote_list = []
+
+#reading the file
+with open(pypoll_csv) as csvfile:
+
+    csvreader = csv.reader(csvfile, delimiter=',')
+    
