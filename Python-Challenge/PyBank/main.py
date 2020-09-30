@@ -51,7 +51,7 @@ greatest_decrease_dt = total_months[monthly_change.index(greatest_decrease_profi
 # printing
 print("Financial Analysis")
 print("-------------------------------------------------------")
-print(f'{len(total_months)}')
+print(f'Total Months: {len(total_months)}')
 print(f'{sum(net_total)}')
 print(f'{round(sum(monthly_change)/len(monthly_change),2)}')
 print(f'{total_months[monthly_increase]} (${(str(greatest_increase_profit))})')
