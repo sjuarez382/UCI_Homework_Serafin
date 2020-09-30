@@ -8,49 +8,37 @@ pybank_csv = os.path.join('..', 'csv_files', 'budget_data.csv')
 with open(pybank_csv, 'r') as csvfile:
 
     csvreader = csv.reader(csvfile, delimiter=',')
-    print(csvreader)
 
+#remove header from count
+    
     csv_header = next(csvreader)
-    print(f"CSV Header: {csv_header}")
 
-    #declaring all my variables
-    total_months = 0
+#declaring all my variables
+
     monthly_change = []
-    date = []
+    total_months = []
+    net_total = []
     profit_loss = []
-    total_profit = 0
-    initial_profit = 0
-    total_change_profits = 0
 
-    # printing
+# printing
     print("Financial Analysis")
     print("-------------------------------------------------------")
 
-    # Total number of months included in dataset
-    for row in csvreader:
-        total_months = total_months + 1
-        
-        print("Total Months:" + str(total_months))  
+# Total number of months included in dataset
+    for row in csv.reader(csvfile):
+        total_months.append(row[0])       
 
 # The net total amount of "Profit/Losses" over the entire period
-        date.append(row[0])
-        profit_loss.append(row[1])
+        net_total.append(int(row[1]))
+       
 
-        total_profit = total_profit + int(row[1])
-        print("Total Profits:" + "$" + str(total_profit))
 # The average of the changes in "profit/Losses" over the entire period
-        average_profit = int(row[1])
-        monthly_change_profits = average_profit - initial_profit
-        monthly_change.append(monthly_change_profits)
-        total_change_profits = total_change_profits + monthly_change_profits
-        initial_profit = average_profit
-        average_change = (total_change_profits / total_months)
-        print("Average Change:" + "$" + str(int(average_change)))
+       
 
 # The greatest increase in profits (date and amount) over the entire period
-        greatest_decrease_profit = max(monthly_change)
-        greatest_decrease_profit = min(monthly_change)  
+        #greatest_increase_profit = max(monthly_change)
+        #greatest_decrease_profit = min(monthly_change)  
 
 # The greatest decrease in losses (date and amount) over hte entire period
-        greatest_increase_dt = 
-        greatest_decrease_dt = 
+        #greatest_increase_dt = date[monthly_change.index(greatest_increase_profit)]
+        #greatest_decrease_dt = date[monthly_change.index(greatest_decrease_profit)]
