@@ -53,7 +53,6 @@ election_winner = candidate_list[max_index]
 #printing results
 print("Election Results")
 print("----------------------")
-print(f"{candidate_list}")
 print(f'{total_votes}')
 print("----------------------")
 for i in range(len(candidate_list)):
@@ -68,8 +67,9 @@ with open(csvfile, 'w') as file:
 
 # Writting to text file
 file.write("Election Results")
+file.write("\n")
 file.write("----------------------")
-file.write(f"{candidate_list}")
+file.write("\n")
 file.write(f'{total_votes}')
 file.write("----------------------")
 for i in range(len(candidate_list)):
