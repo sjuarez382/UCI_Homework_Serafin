@@ -62,7 +62,7 @@ csvfile = os.path.join('Analysis', "Financial_Analys_Summary_PyBank.txt")
 with open(csvfile, 'w') as file:
 
 # Writting to text file
-        print("Financial Analysis")
+        file.write("Financial Analysis")
         file.write("-------------------------------------------------------")
         file.write(f'Total Months: {len(total_months)}')
         file.write(f'Total: ${sum(net_total)}')
