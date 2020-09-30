@@ -35,7 +35,10 @@ with open(pypoll_csv) as csvfile:
 #declaring other variables
 percent = []
 
-
+#percent calculations!
+for i in range(len(candidate_list)):
+    percent_of_votes = round(total_votes[i] / total_votes*100,2)
+    percent.append(percent_of_votes)
 
 
 
