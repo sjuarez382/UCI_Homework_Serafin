@@ -4,7 +4,7 @@
 
 In this challenge, I was asked to:
 * Create a Python script for analyzing the financial records of my company that calculates the following:
- * The total number of months included in the dataset.
+ ** The total number of months included in the dataset.
  * The net total amount of "Profit/Losses" over the entire period.
  * The average of the changes in "Profit/Losses" over the entire period.
  * The greatest increase in profits (date and amount) over the entire period.
