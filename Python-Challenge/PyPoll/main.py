@@ -25,3 +25,9 @@ print(f'{total_votes}')
 
 #list of candidates
         candidate = (row[2])
+        if candidate in candidate_list:
+            candidate_index = candidate_list.index(candidate)
+            Vote_list[candidate_index] = Vote_list[candidate_index] + 1
+        else:
+            candidate_list.append(candidate)
+            Vote_list.append(1)
