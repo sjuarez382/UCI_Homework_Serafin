@@ -9,7 +9,6 @@ pybank_csv = os.path.join('..', 'csv_files', 'budget_data.csv')
 total_months = []
 monthly_change = []
 net_total = []
-profit_loss = []
 
 
 #reading the file
@@ -35,7 +34,7 @@ with open(pybank_csv) as csvfile:
 
 # The average of the changes in "profit/Losses" over the entire period
     for i in range(len(net_total)-1):
-            profit_loss.append(net_total[i + 1] - net_total[i])
+            monthly_change.append(net_total[i + 1] - net_total[i])
             print(f'{len(total_months)}')
             print(f'{sum(net_total)}')    
 
@@ -52,3 +51,4 @@ print(f'{round(sum(monthly_change)/len(monthly_change),2)}')
 greatest_increase_dt = total_months[monthly_change.index(greatest_increase_profit)]
 greatest_decrease_dt = total_months[monthly_change.index(greatest_decrease_profit)]
 print(f'{total_months[monthly_increase]} (${(str(greatest_increase_profit))}')
+print(f'{total_months[Monthly_decrease]} (${(str(greatest_decrease_profit))}')
