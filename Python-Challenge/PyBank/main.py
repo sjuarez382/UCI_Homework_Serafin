@@ -54,7 +54,7 @@ print("-------------------------------------------------------")
 print(f'{len(total_months)}')
 print(f'{sum(net_total)}')
 print(f'{round(sum(monthly_change)/len(monthly_change),2)}')
-print(f'{total_months[monthly_increase]} (${(str(greatest_increase_profit))}')
-print(f'{total_months[Monthly_decrease]} (${(str(greatest_decrease_profit))}')
+print(f'{total_months[monthly_increase]} (${(str(greatest_increase_profit))})')
+print(f'{total_months[Monthly_decrease]} (${(str(greatest_decrease_profit))})')
 
   
