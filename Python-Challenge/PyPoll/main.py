@@ -47,6 +47,8 @@ for i in range(len(candidate_list)):
         print(max_vote)
         max_index = i
 
+#winner winner, chicken dinner
+election_winner = candidate_list[max_index]
 
 
 
