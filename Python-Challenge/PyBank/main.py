@@ -58,7 +58,7 @@ print(f'Greatest Increase in Profits: {total_months[monthly_increase]} (${(str(g
 print(f'Greatest Decrease in Profits: {total_months[Monthly_decrease]} (${(str(greatest_decrease_profit))})')
 
  #Final script, print to terminal and exporting to text file
-csvfile = os.path.join('Financial Analysis', "Finanacial_Analys_Summary_PyBank.txt")
+csvfile = os.path.join('Analysis', "Financial_Analys_Summary_PyBank.txt")
 with open(csvfile, 'w') as file:
 
 # Writting to text file
