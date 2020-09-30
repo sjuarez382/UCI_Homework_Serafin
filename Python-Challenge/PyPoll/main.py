@@ -31,5 +31,14 @@ with open(pypoll_csv) as csvfile:
         else:
             candidate_list.append(candidate)
             Vote_list.append(1)
+
+#declaring other variables
+percent = []
+
+
+
+
+
+
 print(f"{candidate_list}")
 print(f'{total_votes}')
