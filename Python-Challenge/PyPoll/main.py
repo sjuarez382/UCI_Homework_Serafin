@@ -50,8 +50,6 @@ for i in range(len(candidate_list)):
 #winner winner, chicken dinner
 election_winner = candidate_list[max_index]
 
-
-
 #printing results
 print("Election Results")
 print("----------------------")
@@ -63,3 +61,9 @@ for i in range(len(candidate_list)):
 print("----------------------")
 print(f'{election_winner}')
 print("----------------------")
+
+#Final script, print to terminal and exporting to text file
+csvfile = os.path.join('Analysis', "Financial_Analys_Summary_PyPoll.txt")
+with open(csvfile, 'w') as file:
+
+# Writting to text file
