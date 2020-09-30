@@ -53,12 +53,12 @@ election_winner = candidate_list[max_index]
 #printing results
 print("Election Results")
 print("----------------------")
-print(f'{total_votes}')
+print(f'Total Votes: {total_votes}')
 print("----------------------")
 for i in range(len(candidate_list)):
     print(f"{candidate_list[i]} : {percent[i]}% ({Vote_list[i]})")
 print("----------------------")
-print(f'{election_winner}')
+print(f'Winner: {election_winner}')
 print("----------------------")
 
 #Final script, print to terminal and exporting to text file
@@ -71,6 +71,7 @@ with open(csvfile, 'w') as file:
     file.write("----------------------")
     file.write("\n")
     file.write(f'Total Votes: {total_votes}')
+    file.write("\n")
     file.write("----------------------")
     file.write("\n")
     for i in range(len(candidate_list)):
