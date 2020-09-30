@@ -57,3 +57,4 @@ print(f"{candidate_list}")
 print(f'{total_votes}')
 for i in range(len(candidate_list)):
     print(f"{candidate_list[i]} : {percent[i]}% ({Vote_list[i]})")
+print(f'{election_winner}')
