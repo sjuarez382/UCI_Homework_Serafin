@@ -9,22 +9,23 @@ dept_emp
 -
 emp_no PK int FK - dept_manager.emp_no
 dept_no PK varchar FK >- departments.dept_no
-from_date date
-to_date date
+
 
 dept_manager
 -
-emp_no PK int FK - employees.emp_no
 dept_no varchar FK >- departments.dept_no
+emp_no PK int FK - employees.emp_no
+
 
 
 employees
 -
 emp_no PK int FK -< dept_emp.emp_no
+emp_title int
 birth_date date
 first_name varchar
 last_name varchar
-gender varchar
+sex varchar
 hire_date date
 
 salaries
@@ -35,6 +36,5 @@ salary integer
 
 titles
 -
-emp_no int PK FK >- employees.emp_no
+title_id int PK FK >- employees.emp_title
 title varchar
-
