@@ -1,7 +1,6 @@
 ﻿-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
-
--- drop table ... cascade "used for dropping table and everything attached to it"
+--drop table titles cascade "used to drop tables and everything tied to it"
 
 CREATE TABLE departments (
     dept_no varchar   NOT NULL,
@@ -71,9 +70,9 @@ REFERENCES employees (emp_no);
 ALTER TABLE employees ADD CONSTRAINT fk_employees_emp_no FOREIGN KEY(emp_no)
 REFERENCES dept_emp (emp_no);
 
+ALTER TABLE employees ADD CONSTRAINT fk_employees_title_id FOREIGN KEY(title_id)
+REFERENCES titles (title_id);
+
 ALTER TABLE salaries ADD CONSTRAINT fk_salaries_emp_no FOREIGN KEY(emp_no)
 REFERENCES employees (emp_no);
-
-ALTER TABLE titles ADD CONSTRAINT fk_titles_title_id FOREIGN KEY(title_id)
-REFERENCES employees (title_id);
 
