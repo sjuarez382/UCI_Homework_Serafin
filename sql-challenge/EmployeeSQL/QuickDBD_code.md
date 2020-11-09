@@ -8,7 +8,7 @@ dept_name varchar
 dept_emp
 -
 emp_no PK int FK - dept_manager.emp_no
-dept_no PK varchar FK >- departments.dept_no
+dept_no varchar FK >- departments.dept_no
 
 
 dept_manager
