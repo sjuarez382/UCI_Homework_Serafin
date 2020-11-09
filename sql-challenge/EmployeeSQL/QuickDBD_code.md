@@ -21,7 +21,7 @@ emp_no PK int FK - employees.emp_no
 employees
 -
 emp_no PK int FK -< dept_emp.emp_no
-emp_title int
+title_id int
 birth_date date
 first_name varchar
 last_name varchar
@@ -36,5 +36,5 @@ salary integer
 
 titles
 -
-title_id int PK FK >- employees.emp_title
+title_id int PK FK >- employees.title_id
 title varchar
