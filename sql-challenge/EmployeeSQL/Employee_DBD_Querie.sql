@@ -1,6 +1,6 @@
 ﻿-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
---drop table titles cascade "used to drop tables and everything tied to it"
+drop table dept_emp cascade --"used to drop tables and everything tied to it"
 
 CREATE TABLE departments (
     dept_no varchar   NOT NULL,
@@ -12,18 +12,12 @@ CREATE TABLE departments (
 
 CREATE TABLE dept_emp (
     emp_no int   NOT NULL,
-    dept_no varchar   NOT NULL,
-    CONSTRAINT pk_dept_emp PRIMARY KEY (
-        emp_no
-     )
+    dept_no varchar   NOT NULL
 );
 
 CREATE TABLE dept_manager (
     dept_no varchar   NOT NULL,
-    emp_no int   NOT NULL,
-    CONSTRAINT pk_dept_manager PRIMARY KEY (
-        emp_no
-     )
+    emp_no int   NOT NULL
 );
 
 CREATE TABLE employees (
@@ -41,10 +35,7 @@ CREATE TABLE employees (
 
 CREATE TABLE salaries (
     emp_no integer   NOT NULL,
-    salary integer   NOT NULL,
-    CONSTRAINT pk_salaries PRIMARY KEY (
-        emp_no
-     )
+    salary integer   NOT NULL
 );
 
 CREATE TABLE titles (
