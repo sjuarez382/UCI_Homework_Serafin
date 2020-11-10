@@ -1,7 +1,7 @@
 ﻿-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
-drop table dept_emp cascade --"used to drop tables and everything tied to it"
-
+--drop table employees cascade --"used to drop tables and everything tied to it"
+--done
 CREATE TABLE departments (
     dept_no varchar   NOT NULL,
     dept_name varchar   NOT NULL,
@@ -9,20 +9,20 @@ CREATE TABLE departments (
         dept_no
      )
 );
-
+--done
 CREATE TABLE dept_emp (
     emp_no int   NOT NULL,
     dept_no varchar   NOT NULL
 );
-
+--done
 CREATE TABLE dept_manager (
     dept_no varchar   NOT NULL,
     emp_no int   NOT NULL
 );
-
+--done
 CREATE TABLE employees (
     emp_no int   NOT NULL,
-    title_id int   NOT NULL,
+    title_id varchar   NOT NULL,
     birth_date date   NOT NULL,
     first_name varchar   NOT NULL,
     last_name varchar   NOT NULL,
@@ -32,14 +32,14 @@ CREATE TABLE employees (
         emp_no
      )
 );
-
+--done
 CREATE TABLE salaries (
     emp_no integer   NOT NULL,
     salary integer   NOT NULL
 );
-
+--done
 CREATE TABLE titles (
-    title_id int   NOT NULL,
+    title_id varchar   NOT NULL,
     title varchar   NOT NULL,
     CONSTRAINT pk_titles PRIMARY KEY (
         title_id
