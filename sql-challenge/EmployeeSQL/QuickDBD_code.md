@@ -1,19 +1,19 @@
 # SQL Homework - Quick Database Diagram
 
-departments
+epartments
 -
-dept_no PK varchar
+dept_no  varchar
 dept_name varchar
 
 dept_emp
 -
-emp_no int FK - dept_manager.emp_no
-dept_no varchar FK >- departments.dept_no
+emp_no int
+dept_no varchar
 
 
 dept_manager
 -
-dept_no varchar FK >- departments.dept_no
+dept_no PK varchar FK >- departments.dept_no
 emp_no int FK - employees.emp_no
 
 
@@ -21,7 +21,7 @@ emp_no int FK - employees.emp_no
 employees
 -
 emp_no PK int FK -< dept_emp.emp_no
-title_id int FK >- titles.title_id
+title_id varchar
 birth_date date
 first_name varchar
 last_name varchar
@@ -36,5 +36,5 @@ salary integer
 
 titles
 -
-title_id int PK
+title_id varchar PK FK >- employees.title_id
 title varchar
