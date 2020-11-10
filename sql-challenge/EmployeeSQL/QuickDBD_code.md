@@ -1,8 +1,8 @@
 # SQL Homework - Quick Database Diagram
 
-epartments
+departments
 -
-dept_no  varchar
+dept_no PK varchar
 dept_name varchar
 
 dept_emp
@@ -13,7 +13,7 @@ dept_no varchar
 
 dept_manager
 -
-dept_no PK varchar FK >- departments.dept_no
+dept_no varchar FK >- departments.dept_no
 emp_no int FK - employees.emp_no
 
 
