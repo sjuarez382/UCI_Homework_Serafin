@@ -23,6 +23,12 @@ on d.dept_no = dm.dept_no
 order by emp_no
 
 --List the department of each employee with the following information: employee number, last name, first name, and department name.
+select de.emp_no, e.last_name, e.first_name, d.dept_name
+from dept_emp as de
+inner join departments as d
+on d.dept_no = de.dept_no
+inner join employees as e
+on e.emp_no = de.emp_no
 
 
 --List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
