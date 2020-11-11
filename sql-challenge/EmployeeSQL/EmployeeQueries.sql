@@ -29,9 +29,12 @@ inner join departments as d
 on d.dept_no = de.dept_no
 inner join employees as e
 on e.emp_no = de.emp_no
-
+order  by emp_no
 
 --List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
+select * from employees
+where first_name = 'Hercules' and last_name like 'B%'
+order by last_name
 
 
 --List all employees in the Sales department, including their employee number, last name, first name, and department name.
