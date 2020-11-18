@@ -1,9 +1,28 @@
 #app.py file 
+from flask import Flask, jsonify
+import numpy as np
+import sqlalchemy
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy.orm import Session
+from sqlalchemy import create_engine, func
+from datetime import datetime, timedelta
+from itertools import chain
 
-#flask
+#setup
+engine = create_engine("sqlite:///Resources/hawaii.sqlite")
+Base = automap_base()
+Base.prepare(engine, reflect=True)
+# Save references to each table
+Measurement = Base.classes.measurement
+Station = Base.classes.station 
+#################################################
+# Flask Setup
+#################################################
 app = Flask(__name__)
 
-#route
+#################################################
+# Flask Routes
+#################################################
 @app.route("/")
 def home():
     print("Here are all of the available routes")
