@@ -25,12 +25,23 @@ app = Flask(__name__)
 #################################################
 @app.route("/")
 def home():
-    print("Here are all of the available routes")
+    return (f"Here are all of the available routes<br/>")
+            f"/api/v1.0/precipitation: This list dates and Precipitation<br/>"
+            f"/api/v1.0/stations : This list all stations from dataset<br/>"
+            f"/api/v1.0/tobs : This list dates and temperature from a year from the last data point (2017-08-23)<br/>"
+            f"/api/v1.0/startdate : This shows min, average and max temperature after specified start date<br/>"
+            f"/api/v1.0/startdate/enddate : show min, average and max temperature between specified start and end date<br/><br/><br/>"
+            f"Start and end date should be formatted as 'YYYY-MM-DD'")
+
 
 #Convert the query results to a dictionary using date as the key and prcp as the value.
 @app.route("/api/v1.0/precipitation")
 def precipitation():
-
+    session = Session(engine
+    last_year_prcp = session.query(Measurement.date, Measurement.prcp).filter(Measurement.date >= year_ago).all()
+    dict_prcp = dict(last_year_prcp)
+    session.close()
+    return jsonify(last_year_prcp)
 #Return a JSON list of stations from the dataset.
 @app.route("/api/v1.0/stations")
 def stations():
