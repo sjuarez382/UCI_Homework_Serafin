@@ -37,8 +37,8 @@ def home():
 #Convert the query results to a dictionary using date as the key and prcp as the value.
 @app.route("/api/v1.0/precipitation")
 def precipitation():
-    session = Session(engine
-    last_year_prcp = session.query(Measurement.date, Measurement.prcp).filter(Measurement.date >= year_ago).all())
+    session = Session(engine)
+    last_year_prcp = session.query(Measurement.date, Measurement.prcp).filter(Measurement.date >= year_ago).all()
     dict_prcp = dict(last_year_prcp)
     session.close()
     return jsonify(last_year_prcp)
