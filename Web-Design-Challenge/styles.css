@@ -1,1 +1,13 @@
 /* Add your styles here */
+
+img {
+    max-width: 100%;
+  }
+
+  #imgsel{
+    border: lightseagreen 2px solid;
+  }
+  h1, h2, h3{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: lightseagreen;
+  }
