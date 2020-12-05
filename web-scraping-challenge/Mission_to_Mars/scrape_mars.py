@@ -13,19 +13,6 @@ import requests
 from webdriver_manager.chrome import ChromeDriverManager
 import pymongo
 
-
-# In[1]:
-
-
-pip install splinter
-
-
-# In[2]:
-
-
-pip install webdriver_manager
-
-
 # In[8]:
 
 
