@@ -188,31 +188,3 @@ for url,title in zip(url_dict_list,title_list):
     hemisphere_image_dict["img_url"] = url
     hemisphere_image_urls.append(hemisphere_image_dict)
 print(hemisphere_image_urls)
-
-
-# converting to py
-
-# In[29]:
-
-
-# converting to py
-get_ipython().system('pip install ipython')
-
-
-# In[31]:
-
-
-get_ipython().system('pip install nbconvert')
-
-
-# In[ ]:
-
-
-ipython nbconvert — to script scrape_mars.ipynb
-
-
-# In[ ]:
-
-
-
-
