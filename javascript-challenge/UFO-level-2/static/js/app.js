@@ -44,3 +44,13 @@ submit.on("click", function(){
     })
     displayData(filtered);
 });
+
+var filteredInputs = d3.selectAll('.form-control');
+function clearEntries() {
+    filters = {};
+    filteredInputs._groups[0].forEach(entry=> {
+        if (entry.value !=0){
+            d3.select('#' + entry.id).node().value = "";
+        }
+    });
+};
