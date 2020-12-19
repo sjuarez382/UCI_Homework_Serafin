@@ -18,10 +18,10 @@ var button = d3.select("filter-btn");
 button.on("click", function() {
     tbody.html("");
     
-    var inputElement = d3.select("#datetime");
+    var inputElement = d3.select("#input");
     var inputValue = inputElement.property("value");
     console.log(inputValue);
-    var filteredData = tableData.filter(sighting => sighting.datetime === inputValue);
+    var filteredData = tableData.filter(sighting => sighting.datetime === inputValue || sighting.city === inputValue || sighting.state === inputValue || sighting.country === inputValue || sighting.shape === inputValue);
     console.log(filteredData);
 
     filteredData.forEach(function(selections) {
