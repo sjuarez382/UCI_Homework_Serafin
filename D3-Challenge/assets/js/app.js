@@ -56,4 +56,28 @@ d3.csv("assets/data/data.csv")
         .attr("transform", `translate(0, ${chartHeight})`)
         .call(bottomAxis);
     chartGroup.append("g").call(leftAxis);
+
+
+    var circles = chartGroup.selectAll("g circle").data(stateData);
+
+    var r = 10;
+    var circlesGroup = circles
+        .enter()
+        .append("g")
+        .attr("id", "circlesGroup");
     
+    circlesGroup
+        .append("circle")
+        .attr("cx", d => xLinearScale(d.poverty))
+        .attr("cy", d => yLinearScale(d.healthcare))
+        .attr("r", r)
+        .classed("stateCircle", true);
+    //tooltip
+    var tooltip = d3
+        .tip()
+        .attr("class", "d3-tip")
+        .offset([40, -20])
+        .html(function(d) {
+            return `${d.state}<br>Poverty: ${d.poverty}% <br>Lacks Healthcare: ${d.healthcare}%`;
+         });
+    svg.call(tooltip);
