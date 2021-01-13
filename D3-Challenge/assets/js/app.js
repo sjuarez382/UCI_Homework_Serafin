@@ -81,3 +81,11 @@ d3.csv("assets/data/data.csv")
             return `${d.state}<br>Poverty: ${d.poverty}% <br>Lacks Healthcare: ${d.healthcare}%`;
          });
     svg.call(tooltip);
+
+    circlesGroup
+         .on("mouseover", function(data) {
+             tooltip.show(data, this);
+         })
+         .on("mouseout", function(data, index) {
+             tooltip.hide(data);
+         });
