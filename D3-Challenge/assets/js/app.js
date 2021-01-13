@@ -72,6 +72,14 @@ d3.csv("assets/data/data.csv")
         .attr("cy", d => yLinearScale(d.healthcare))
         .attr("r", r)
         .classed("stateCircle", true);
+    //adding text to circles
+    circlesGroup
+        .append("text")
+        .attr("x", d => xLinearScale(d.poverty))
+        .attr("y", d => yLinearScale(d.healthcare))
+        .classed("stateText", true)
+        .text(d => d.abbr)
+        .attr("font-size", r * 0.95);
     //tooltip
     var tooltip = d3
         .tip()
