@@ -25,3 +25,35 @@ var chartGroup = svg
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 //loading csv
+d3.csv("assets/data/data.csv")
+  .then(function(stateData) {
+    console.log(stateData);
+
+    // Convert each value to a number
+    stateData.forEach(function(data) {
+      data.poverty = +data.poverty;
+      data.healthcare = +data.healthcare;
+    });
+
+    var xLinearScale = d3
+        .scaleLinear()
+        .domain([
+            d3.min(stateData, d => d.healthcare) * 1.8,
+            d3.max(stateData, d => d.poverty) * 1.2
+        ])
+        .range([0, chartWidth]);
+    var yLinearScale = d3
+        .scaleLinear()
+        .domain([0, d3.max(stateData, d => d.healthcare * 1.2)])
+        .range([chartHeight, 0]);
+
+    //axis
+    var bottomAxis = d3.axisBottom(xLinearScale);
+    var leftAxis = d3.axisLeft(yLinearScale);
+
+    chartGroup
+        .append("g")
+        .attr("transform", `translate(0, ${chartHeight})`)
+        .call(bottomAxis);
+    chartGroup.append("g").call(leftAxis);
+    
