@@ -121,12 +121,12 @@ function createMap(earthquakeCircles) {
 
   d3.json(platesjson, function (data) {
     L.geoJSON(data, {
-      style: {
-        color: "orange",
-        fillOpacity: 0,
-      },
-    }).addTo(platesLayer);
-  });
+        style: {
+            color: "orange",
+            fillOpacity: 0,
+            },
+        }).addTo(platesLayer);
+    });
 
   // overlays with on/off toggle
 
@@ -146,18 +146,18 @@ function createMap(earthquakeCircles) {
   // Add a legend
   var legend = L.control({ position: "bottomright" });
   legend.onAdd = function (map) {
-    var div = L.DomUtil.create("div", "info legend");
-    labels = ["0-1", "1-2", "2-3", "3-4", "4-5", "5+"];
+      var div = L.DomUtil.create("div", "info legend");
+      labels = ["0-1", "1-2", "2-3", "3-4", "4-5", "5+"];
 
     for (var i = 0; i < labels.length; i++) {
-      div.innerHTML +=
+        div.innerHTML +=
         '<i style="background:' +
         getColor(labels[i]) +
         '"></i> ' +
         labels[i] +
         (labels[i] ? "<br>" : "");
-    }
-    return div;
-  };
+        }
+        return div;
+    };
   legend.addTo(myMap);
 }
