@@ -118,3 +118,27 @@ function createMap(earthquakeCircles) {
   // Add layers group
   var earthquakeLayer = L.layerGroup(earthquakeCircles);
   var platesLayer = L.layerGroup();
+
+  d3.json(platesjson, function (data) {
+    L.geoJSON(data, {
+      style: {
+        color: "orange",
+        fillOpacity: 0,
+      },
+    }).addTo(platesLayer);
+  });
+
+  // overlays with on/off toggle
+
+  var overlayMaps = {
+    Earthquake: earthquakeLayer,
+    Plates: platesLayer,
+  };
+
+  var myMap = L.map("map", {
+    center: [44.9778, -93.265],
+    zoom: 5,
+    layers: [streets, earthquakeLayer],
+  });
+
+  L.control.layers(baseMaps, overlayMaps, { collapsed: false }).addTo(myMap);
