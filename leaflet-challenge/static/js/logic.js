@@ -114,3 +114,7 @@ function createMap(earthquakeCircles) {
     Satellite: satellite,
     Outdoors: outdoors,
   };
+
+  // Add layers group
+  var earthquakeLayer = L.layerGroup(earthquakeCircles);
+  var platesLayer = L.layerGroup();
