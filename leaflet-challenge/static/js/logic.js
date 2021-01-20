@@ -107,4 +107,10 @@ function createMap(earthquakeCircles) {
       id: "mapbox.outdoors",
       accessToken: API_KEY,
     }
-  );  
+  );
+
+  var baseMaps = {
+    Street: streets,
+    Satellite: satellite,
+    Outdoors: outdoors,
+  };
