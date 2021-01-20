@@ -5,14 +5,14 @@ var platesjson = "static/js/tectonic_plates.json";
 //defining sizes
 function markerSize(mag) {
     return mag * 20000;
-  }
+}
 
 //function for correcting date format
 
 function covertTimestamp(time) {
     var date = new Date(time).toLocaleDateString("en-US");
     return date;
-  }
+}
 
 //function for color defining
 
@@ -28,7 +28,7 @@ function getColor(d) {
       : (d === "4-5") | ((d < 5) & (d >= 4))
       ? "rgb(240,167,107)"
       : "rgb(240,107,107)";
-  }
+}
 
 // circle data
 
@@ -79,35 +79,35 @@ function createMap(earthquakeCircles) {
     var satellite = L.tileLayer(
       "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}",
       {
-        attribution:
+          attribution:
           'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 18,
-        id: "mapbox.streets-satellite",
-        accessToken: API_KEY,
-      }
+            maxZoom: 18,
+            id: "mapbox.streets-satellite",
+            accessToken: API_KEY,
+        }
     );
 
     var streets = L.tileLayer(
         "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}",
         {
-          attribution:
+            attribution:
             'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-          maxZoom: 18,
-          id: "mapbox.streets",
-          accessToken: API_KEY,
+            maxZoom: 18,
+            id: "mapbox.streets",
+            accessToken: API_KEY,
         }
-      );
+    );
 
     var outdoors = L.tileLayer(
-    "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}",
-    {
-      attribution:
-        'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-      maxZoom: 18,
-      id: "mapbox.outdoors",
-      accessToken: API_KEY,
-    }
-  );
+        "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}",
+        {
+            attribution:
+            'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: "mapbox.outdoors",
+            accessToken: API_KEY,
+        }
+    );
 
   var baseMaps = {
     Street: streets,
