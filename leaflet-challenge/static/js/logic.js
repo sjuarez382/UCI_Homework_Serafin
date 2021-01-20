@@ -6,3 +6,10 @@ var platesjson = "static/js/tectonic_plates.json";
 function markerSize(mag) {
     return mag * 20000;
   }
+
+//function for correcting date format
+
+function covertTimestamp(time) {
+    var date = new Date(time).toLocaleDateString("en-US");
+    return date;
+  }
